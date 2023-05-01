@@ -1,0 +1,42 @@
+{
+  "name": "spoti-monthly-saver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js --ignore 'token.json' --ignore 'node_modules/*'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "standard": "^17.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/standard/eslintrc.json"
+    ],
+    "rules": {
+      "import/extensions": [
+        "error",
+        {
+          "js": "always"
+        }
+      ],
+      "new-cap": [
+        "error",
+        {
+          "newIsCap": false,
+          "capIsNew": false
+        }
+      ]
+    }
+  }
+}
