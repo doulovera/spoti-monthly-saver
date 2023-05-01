@@ -1,4 +1,4 @@
-# Spoti Monthyl Saver
+# Spoti Monthly Saver
 
 Project to save your Liked Songs from a month into a playlist.
 
