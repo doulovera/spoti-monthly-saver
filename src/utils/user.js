@@ -1,11 +1,9 @@
 import fs from 'node:fs/promises'
 
-const FILE_PATH = `${process.cwd()}/src/public/token.json`
+const FILE_PATH = `${process.cwd()}/src/public/user.json`
 
-export async function storeInfoInToken (token) {
+export async function storeInfoInUser (user) {
   try {
-    if (token?.error) throw new Error(token.error)
-
     let data = '{}'
     try {
       data = await fs.readFile(FILE_PATH)
@@ -14,16 +12,19 @@ export async function storeInfoInToken (token) {
     }
 
     const json = JSON.parse(data)
-    const newJson = { ...json, ...token }
+    const newJson = { ...json, ...user }
     await fs.writeFile(FILE_PATH, JSON.stringify(newJson))
   } catch (error) {
     console.error(error)
   }
 }
 
-export async function getToken () {
+export async function getUser () {
   try {
     const data = await fs.readFile(FILE_PATH)
+
+    if (!data) throw new Error('User not found.')
+
     return JSON.parse(data)
   } catch (error) {
     console.error(error)

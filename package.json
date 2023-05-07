@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js --ignore 'token.json' --ignore 'node_modules/*'"
+    "dev": "nodemon index.js --ignore '*.json' --ignore 'node_modules/*'"
   },
   "keywords": [],
   "author": "",
